@@ -1,0 +1,9 @@
+Changes
+Makefile.PL
+MANIFEST
+README
+t/Search-Glimpse.t
+lib/Search/Glimpse.pm
+META.yml                                 Module meta-data (added by MakeMaker)
+t/pod-coverage.t
+t/pod.t
