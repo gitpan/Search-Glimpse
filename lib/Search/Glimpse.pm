@@ -1,6 +1,6 @@
 package Search::Glimpse;
 #
-# $Id: Glimpse.pm,v 1.7 2004/09/19 18:16:44 albie Exp $
+# $Id: Glimpse.pm 9706 2011-03-13 21:50:19Z ambs $
 #
 # A tool for searching in a glimpse index via the glimpseserver system.
 # It unfortunately requires opening a pipe to glimpse but that's not 
@@ -17,12 +17,10 @@ use 5.006001;
 use strict;
 use warnings;
 
-require Exporter;
-use AutoLoader qw(AUTOLOAD);
-
+use base 'Exporter';
+use Search::Glimpse::ConfigData;
 use IO::File;
 
-our @ISA = qw(Exporter);
 
 our %EXPORT_TAGS = ( 'all' => [ qw() ] );
 
@@ -30,9 +28,8 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.02';
+our $VERSION = '0.03';
 
-our $GLIMPSE_BIN = '/usr/local/bin/glimpse';
 our $GLIMPSE_STATIC_ARGS = '-C -J #SERVER# -i -y -w -L #HITS#';
 our $GLIMPSE_FILTER = '-F';
 our $DEBUG = 0;
@@ -149,6 +146,7 @@ sub search {
 
   $self->{'filter'}||="";
 
+  my $GLIMPSE_BIN = Search::Glimpse::ConfigData->config('glimpse');
   $openstring = "$GLIMPSE_BIN $GLIMPSE_STATIC_ARGS " . $self->{'filter'} .
     " \'" . $string . "\'";
 
