@@ -1,5 +1,9 @@
 Revision history for Perl extension Search::Glimpse.
 
+0.04  Fri Mar 18 20:50:13 WET 2011
+        - Added Search::Glimpse::Indexer
+        - Hopefully fixed Build.PL to complain when binaries not available
+
 0.03  Sun Mar 13 21:48:55 WET 2011
         - Added a modern build system, detecting glimpse binary
         - Expect future development in the near future.

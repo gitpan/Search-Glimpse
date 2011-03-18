@@ -3,6 +3,7 @@ abstract: 'Perl extension to communicate with Glimpse server'
 author:
   - 'Alberto SimÃµes <ambs@cpan.org>'
 build_requires:
+  Test::More: 0
   Test::Pod: 1.00
   Test::Pod::Coverage: 0.08
 configure_requires:
@@ -18,9 +19,15 @@ name: Search-Glimpse
 provides:
   Search::Glimpse:
     file: lib/Search/Glimpse.pm
-    version: 0.03
+    version: 0.04
+  Search::Glimpse::Index:
+    file: lib/Search/Glimpse/Index.pm
+    version: 0.01
+  Search::Glimpse::Server:
+    file: lib/Search/Glimpse/Server.pm
+    version: 0.01
 requires:
   IO::File: 0
 resources:
   license: http://dev.perl.org/licenses/
-version: 0.03
+version: 0.04

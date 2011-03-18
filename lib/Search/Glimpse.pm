@@ -1,6 +1,6 @@
 package Search::Glimpse;
 #
-# $Id: Glimpse.pm 9706 2011-03-13 21:50:19Z ambs $
+# $Id: Glimpse.pm 9758 2011-03-18 20:59:13Z ambs $
 #
 # A tool for searching in a glimpse index via the glimpseserver system.
 # It unfortunately requires opening a pipe to glimpse but that's not 
@@ -28,7 +28,7 @@ our @EXPORT_OK = ( @{ $EXPORT_TAGS{'all'} } );
 
 our @EXPORT = qw();
 
-our $VERSION = '0.03';
+our $VERSION = '0.04';
 
 our $GLIMPSE_STATIC_ARGS = '-C -J #SERVER# -i -y -w -L #HITS#';
 our $GLIMPSE_FILTER = '-F';
